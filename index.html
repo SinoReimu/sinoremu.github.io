@@ -108,7 +108,7 @@
 		};
 		xhttp.open("GET", "http://110.40.189.122/visitorNumber", true);
 		xhttp.send(); 
-
+		document.onclick=function(){document.querySelector("#media").play()}
 		if (!document.createElement('canvas').getContext) {
 			var msg = document.createElement("div");
 			msg.id = "errorMsg";
