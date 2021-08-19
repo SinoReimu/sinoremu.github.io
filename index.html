@@ -17,7 +17,7 @@
 <body>
 	<div id="audio_btn" class="rotate" style="border:1px solid grey; border-radius: 50%;">
 		♫
-		<audio loop src="./bgm.mp3" id="media" autoplay="" preload=""></audio>
+		<audio loop src="./bgm.mp3" id="media" autoplay="autoplay" preload=""></audio>
 	</div>
 	<div id="mainDiv">
 		<div id="content" style="width: 1160px; height: 820px; margin-top: 52px; margin-left: 220px;">
@@ -79,6 +79,7 @@
 					
 					<div id="loveu">
 						这是新的兔猬纪念日计时器<br>
+						已经有 <span style="font-weight: bold;" id="count">0</span> 个人感受到了我们的喜悦<br>
 						<span style="font-weight: bold;">Happy birthday</span> and <br>always love you.<br>
 						<div class="signature">- 🦔</div>
 					</div>
@@ -97,6 +98,17 @@
 		nolovetime.setSeconds(0);
 		nolovetime.setMilliseconds(0);
 		
+		let xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				alert(this.responseText)
+				document.getElementById("count").innerHTML =
+				this.responseText;
+			}
+		};
+		xhttp.open("GET", "http://110.40.189.122/visitorNumber", true);
+		xhttp.send(); 
+		document.onclick=function(){document.querySelector("#media").play()}
 		if (!document.createElement('canvas').getContext) {
 			var msg = document.createElement("div");
 			msg.id = "errorMsg";
