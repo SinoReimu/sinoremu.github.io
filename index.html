@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>My Cute Bunny</title>
+	
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="./jscss/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="./jscss/jquery.js"></script>
+	<script type="text/javascript" src="./jscss/garden.js"></script>
+</head>
+
+<body>
+	<div id="audio_btn" class="rotate" style="border:1px solid grey; border-radius: 50%;">
+		♫
+		<audio loop src="./bgm.mp3" id="media" autoplay="" preload=""></audio>
+	</div>
+	<div id="mainDiv">
+		<div id="content" style="width: 1160px; height: 820px; margin-top: 52px; margin-left: 220px;">
+			<div id="code" style="height: 820px;">
+				<span class="comments">/***<br></span>
+				<span class="comments">&nbsp* @author: Hedgehog<br></span>
+				<span class="comments">&nbsp* @date: 2021.8.19<br></span>
+				<span class="comments">&nbsp* <br></span>
+				<span class="comments">&nbsp* This is a simple letter for my bunny.<br></span>
+				<span class="comments">&nbsp***/<br><br></span>
+				Hedgehog * i = <span class="keyword">new</span> Hedgehog(<span class="string">"me"</span>);<br>
+				<span class="comments">// 这里是刺猬</span><br>
+				Bunny * u ;<br>
+				<span class="keyword">while</span> (true) {<br>
+				<span class="placeholder"><span class="keyword">try</span> {<br>
+				<span class="placeholder"><span class="placeholder">u = Bunny.singleInstance(); <br>
+					<span class="placeholder">}<br>
+				<span class="placeholder"><span class="keyword">catch</span> (std::bad_alloc) {<br>
+					<span class="placeholder"><span class="placeholder"><span class="keyword">continue</span>; <br>
+						<span class="placeholder">	}<br>
+				<span class="placeholder">if (u === <span class="string">YOU</span>){ break; }</span><br> 
+				<span class="placeholder"><span class="comments">// 在人群中找一只 <span style="font-weight: bold;">独一无二</span>的兔兔<br></span>
+				<span class="placeholder"><span class="comments">// 直到遇见了你<br></span>
+				}<br><br>
+					<span class="keyword">try</span>{<br>
+					<span class="placeholder"><span class="keyword">while</span> (<span class="keyword">true</span>) {<br>
+
+				<span class="comments">// 想要知道你的所有想法和感受<br></span>
+					<span class="placeholder"><span class="placeholder"><span class="keyword">switch</span>( u-&gt;statu() ){<br>
+							<span class="placeholder"><span class="placeholder"><span class="keyword">case</span><span class="string">"hungry"</span>: i-&gt;feed(u);break; <br>
+					<span class="placeholder"><span class="placeholder"><span class="keyword">case</span><span class="string">"tired"</span>: i-&gt;hug(u);break; <br>
+					<span class="placeholder"><span class="placeholder"><span class="keyword">case</span><span class="string">"sleepy"</span>: i-&gt;sleep(u);break; <br>
+					<span class="placeholder"><span class="placeholder"><span class="keyword">default</span>: i-&gt;say(u,<span class="string">"I Love U"</span>);break; <br>
+					<span class="placeholder"><span class="placeholder">}<br>
+					<span class="placeholder">}<br>
+				}
+				<span class="keyword">catch</span>(Bunny::Everything){ <br>
+				<span class="comments">// 你的一举一动都会照亮我的生活<br></span>
+				<span class="placeholder">i-&gt;brightMyLife (<span class="keyword">true</span>); <br>
+				<span class="comments">// 让我能够期待每一天的到来<br></span>
+				<span class="placeholder">i-&gt;WaitForNewDays (<span class="keyword"></span>); <br>
+				}<br><br>
+				<span class="comments">// 我只想用余生所有的时间，和你一起发现生活的快乐<br></span>
+				<span class="keyword">while</span> (i->restOfTime > 0) {<br>
+					<span class="placeholder">i-&gt;findHappyThingsWith (<span class="keyword">u</span>); <br>
+				<span class="keyword">}<br>
+			</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>
+			<div id="loveHeart">
+				<canvas id="garden" width="0" height="0"></canvas>
+				<div id="words">
+					<div id="messages">
+						可爱的 🐰 崽崽, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<br>我们已经在一起<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<br>
+						<div id="elapseClock">&nbsp;&nbsp;&nbsp;&nbsp;<span class="digit">333</span> days <span class="digit">17</span> hrs <span class="digit"><br>&nbsp;&nbsp;07</span> mins <span class="digit">33</span> secs</div>
+					</div>
+					
+					<div id="loveu">
+						这是新的兔猬纪念日计时器<br>
+						<span style="font-weight: bold;">Happy birthday</span> and <br>always love you.<br>
+						<div class="signature">- 🦔</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var nolovetime = new Date();
+		nolovetime.setFullYear(2017, 10, 06);
+		nolovetime.setHours(0);
+		nolovetime.setMinutes(0);
+		nolovetime.setSeconds(0);
+		nolovetime.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 100);
+
+			timeElapse(nolovetime);
+			setInterval(function () {
+				timeElapse(nolovetime);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+
+		(function() {
+    window.signature = {
+        initialize: function() {
+            return $('.signature2 svg').each(function() {
+                var delay, i, len, length, path, paths, previousStrokeLength, results, speed;
+                paths = $('path, circle, rect', this);
+                delay = 0;
+                results = [];
+                for (i = 0, len = paths.length; i < len; i++) {
+                    path = paths[i];
+                    length = path.getTotalLength();
+                    previousStrokeLength = speed || 0;
+                    speed = 1000;
+                    delay += previousStrokeLength + 100;
+                    results.push($(path).css('transition', 'none').attr('data-length', length).attr('data-speed', speed).attr('data-delay', delay).attr('stroke-dashoffset', length).attr('stroke-dasharray', length + ',' + length));
+                }
+                return results;
+            });
+        },
+        animate: function() {
+            return $('.signature2 svg').each(function() {
+                var delay, i, len, length, path, paths, results, speed;
+                paths = $('path, circle, rect', this);
+                results = [];
+                for (i = 0, len = paths.length; i < len; i++) {
+                    path = paths[i];
+                    length = $(path).attr('data-length');
+                    speed = $(path).attr('data-speed');
+                    delay = $(path).attr('data-delay');
+                    results.push($(path).css('transition', 'stroke-dashoffset ' + speed + 'ms ' + delay + 'ms linear').attr('stroke-dashoffset', '0'));
+                }
+                return results;
+            });
+        }
+
+    };
+
+}).call(this);
+	</script>
+
+
+</body></html>
